@@ -1,0 +1,33 @@
+{
+  "name": "packtex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "servidor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon servidor/servidor.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/alexanderrq/CandyUCAB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/alexanderrq/CandyUCAB/issues"
+  },
+  "homepage": "https://gitlab.com/alexanderrq/CandyUCAB#README",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "express-authentication": "^0.3.2",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.3.0",
+    "mustache-express": "^1.2.6",
+    "oracledb": "^2.2.0",
+    "pg": "^7.4.3",
+    "pg-camelcase": "0.0.3"
+  }
+}
