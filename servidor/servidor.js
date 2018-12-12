@@ -30,10 +30,26 @@ const mustache = mustacheExpress();
 mustache.cache = null;
 app.engine('mustache', mustache);
 app.set('view engine', 'mustache')
+app.use(express.static('views'))
 
 app.use(express.static('public'))
 
 app.use(bodyParser.urlencoded({extended: false}));
+
+    app.get('/principal', (req, res) =>{
+      res.render('inicio1') 
+    });
+    app.get('/principal', (req, res) =>{
+     res.send('/login')    
+    });
+
+app.get('/orden', (req, res) =>{
+  res.render('orden')
+});
+
+ app.get('/mapa', (req, res) =>{
+   res.render('mapa')
+ });
 
 app.get('/inicio', (req, res) =>{ 
 res.render('inicio')
@@ -50,8 +66,8 @@ res.render('inicio')
     cliente.connect()
       .then(() => {
      
-        const sqlUsuario = 'INSERT INTO usuario (nombre, apellido, correo, clave ) VALUES($1, $2, $3, $4 );'
-        const parametrosUsuario = [req.body.nombre, req.body.apellido, req.body.correo, req.body.clave]
+          const sqlUsuario = 'INSERT INTO usuario (nombre, apellido, fecha_de_nacimiento, correo, clave ) VALUES($1, $2, $3, $4, $5);'
+        const parametrosUsuario = [req.body.nombre, req.body.apellido, req.body.fecha_de_nacimiento, req.body.correo, req.body.clave]
         var resultado = {
           usuario:cliente.query(sqlUsuario, parametrosUsuario)
         }
@@ -89,17 +105,18 @@ res.render('inicio')
               correo: resultado.rows[0].correo,
             };
             console.log(usuario);
-            res.send('Se ha iniciado sesion')
+            res.redirect('/principal')
                
               
           } else {
-            res.send('contraña incorrecta')
+            res.redirect('/login')
           }
         }).catch((err) => {
           console.log('err: ', err);
-          res.send('Ocurrio un error');
+          res.redirect('/login')
         });
     });
+
 
 
 
