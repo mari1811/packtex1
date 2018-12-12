@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/alexanderrq/CandyUCAB.git"
+    "url": "git+https://github.com/mari1811/packtex-prueba.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/alexanderrq/CandyUCAB/issues"
+    "url": "https://github.com/mari1811"
   },
-  "homepage": "https://gitlab.com/alexanderrq/CandyUCAB#README",
+  "homepage": "",
   "dependencies": {
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
