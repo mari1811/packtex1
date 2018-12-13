@@ -49,10 +49,10 @@
               </div>
 	      <div class="form-group">
 	      <text>Nombre de destinatario: </text>
-              <input name="nombre_persona_entrega"  required type="text" class="form-control input-lg"  placeholder="Nombre">
+              <input name="nombre_persona_entrega" pattern="[a-zA-Z]*"  required type="text" class="form-control input-lg"  placeholder="Nombre">
               </div>
 	      <div class="form-group">
-              <input name="apellido_persona_entrega" required type="text" class="form-control input-lg"  placeholder="Apellido">
+              <input name="apellido_persona_entrega" pattern="[a-zA-Z]*" required type="text" class="form-control input-lg"  placeholder="Apellido">
               </div>
               <a href="/principal" ><button type="submit" style='width:200px; height:50px' class="btn btn-success btn-lg"id="registrar">Registrar</button></a>
 
