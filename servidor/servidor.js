@@ -39,10 +39,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 var sesion;
 
 
-app.get('/', (req, res) =>{
-  res.redirect('/login')
 
-});
     app.get('/principal', (req, res) =>{
       res.render('inicio1')
     });
