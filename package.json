@@ -29,5 +29,6 @@
     "oracledb": "^2.2.0",
     "pg": "^7.4.3",
     "pg-camelcase": "0.0.3"
+    "request": "^2.88.0"
   }
 }
