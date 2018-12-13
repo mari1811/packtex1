@@ -30,14 +30,14 @@
         <form action="/registro" method="post">
 
               <div class="form-group">
-              <input name ="nombre" required class="form-control input-lg" type="text" placeholder="Nombre">
+              <input name ="nombre" required pattern="[a-zA-Z]*" class="form-control input-lg" type="text" placeholder="Nombre">
               </div>
 					    <div class="form-group">
-              <input name="apellido" required class="form-control input-lg" type="text" placeholder="Apellido">
+              <input name="apellido" required pattern="[a-zA-Z]*" class="form-control input-lg" type="text" placeholder="Apellido">
 						  </div>
 						  
 	      <div class="form-group">
-              <input name="fecha_de_nacimiento"  required class="form-control input-lg" type="date" placeholder="Fecha de nacimiento" max="2000-12-10" required>
+              <input name="fecha_de_nacimiento" required class="form-control input-lg" type="date" placeholder="Fecha de nacimiento" max="2000-12-10" required>
              </div>
 	     
               <div class="bootstrap-iso">
@@ -46,7 +46,7 @@
               </div>
               <div class="form-group">
 	      
-	      <text>La clave debe contener: mayúsculas, minúsculas, números y caracteres especiales</text>
+	      <text>La clave debe tener mínimo 8 caracteres y contener mayusculas, minusculas, números y cracteres especiales</text>
 	      
               <input name="clave" type="password" required class="form-control input-lg" pattern="(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*"  pattern=".{8,}"  id="exampleInputPassword1" placeholder="Clave">
               </div>
