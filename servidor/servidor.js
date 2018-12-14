@@ -52,22 +52,24 @@ app.get('/orden', (req, res) =>{
     const cliente = new Client();
     cliente.connect()
       .then(() => {
-        const sql = 'SELECT * FROM direccion_salida'
-        return cliente.query(sql);
+        const sqlDireccion = 'SELECT * FROM direccion_salida WHERE id_usuario = $1'
+        const parametro = [sesion.sIdUsuario]
+        return cliente.query(sqlDireccion, parametro);
 
       })
       .then((resultado) => {
-      console.log(resultado.rows[0]);
+      console.log(resultado);
                         const cliente = new Client();
                         cliente.connect()
                           .then(() => {
-                            const sql = 'SELECT * FROM orden'
+                            const sqlOrden = 'SELECT * FROM orden WHERE id_usuario = $1'
+                            const parametros = [sesion.sIdUsuario]
 
-                            return cliente.query(sql);
+                            return cliente.query(sqlOrden, parametros);
 
                           })
                           .then((resultado2) => {
-                          console.log(resultado2.rows[0]);
+                          console.log(resultado2);
 
         res.render('mapa',{
           direccion: resultado.rows[0],
