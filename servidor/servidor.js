@@ -48,9 +48,34 @@ app.get('/orden', (req, res) =>{
   res.render('orden')
 });
 
- app.get('/mapa', (req, res) =>{
-   res.render('mapa')
- });
+  app.get('/mapa', (req, res) =>{
+    const cliente = new Client();
+    cliente.connect()
+      .then(() => {
+        const sql = 'SELECT * FROM direccion_salida'
+        return cliente.query(sql);
+
+      })
+      .then((resultado) => {
+      console.log(resultado.rows[0]);
+                        const cliente = new Client();
+                        cliente.connect()
+                          .then(() => {
+                            const sql = 'SELECT * FROM orden'
+
+                            return cliente.query(sql);
+
+                          })
+                          .then((resultado2) => {
+                          console.log(resultado2.rows[0]);
+
+        res.render('mapa',{
+          direccion: resultado.rows[0],
+          llegada:resultado2.rows[0]
+});
+});
+});
+});
 
 app.get('/inicio', (req, res) =>{
 res.render('inicio')
