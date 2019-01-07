@@ -6,8 +6,9 @@
     <head>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login</title>
-        <link href="https://github.com/mari1811/packtex-prueba/blob/master/views/newcss.css" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" href="Imagenes/Icono.ico" />
+        <title>PackTex -Iniciar Sesión</title>
+        <link href="newcss.css" rel="stylesheet" type="text/css">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
     crossorigin="anonymous">
@@ -20,19 +21,32 @@
     </script>
 
     </head>
-   <body background="https://resi.ze-robot.com/images/go/google-wallpapers-25-of-my-favorite-wallpaper-sized-illustrations-by-google-17-1024%C3%97768.jpg" >
-   <center><img style="float:top; margin:1px;" alt="" src="http://ferraratattooconvention.it/tatuatori/view/img/marker.svg" width="70" height="70" />
-   </center> <font face="SimSun-ExtB" size="7" color="black"> <center id="titulo1">PackTex</center></font>
+
+   <body style="background-color: #B0FFC3;" class="teal lighten-2">
 
 
+    <br>
 
+    
 
-  <div class="form-group">
+    <h2 class="texto">
+      ¿Necesitas enviar un paquete? <br>
+      ¡Cuenta con nosotros! <br>
+      Regístrate en PackTex y sigue los pasos, <br>
+      es muy sencillo. <br><br>    
+      <img style="float:top; margin:5px;" alt="" src="Imagenes/mq3.png" width="400" height="300" />
+      
+    </h2>
+
+    <h2 class="menu">
+      <center><img style="float:top; margin:1px;" alt="" src="Imagenes/Icono.ico" width="150" height="150" />
+      </center> <font face="Courier" size="7" color="black"> <center id="titulo1">PackTex</center></font>
+      <div class="form-group">
       <form action="/login" method="post">
-   <center><input type="email" name="correo" required class="form-control input-lg" id="exampleInputEmail1" placeholder="E-mail" style='width:500px; height:50px' ></center>
+        <br>
+   <center><input type="email" name="correo" required class="form-control input-lg" id="exampleInputEmail1" placeholder="E-mail" style='width:300px; height:35px' ></center>
     <br>
-    <br>
-   <center><input type="password" required name="clave" class="form-control input-lg" id="exampleInputPassword1" placeholder="Clave" style='width:500px; height:50px'></center>
+   <center><input type="password" required name="clave" class="form-control input-lg" id="exampleInputPassword1" placeholder="Clave" style='width:300px; height:35px'></center>
     </div>
      <br>
 <center><button type="submit"  required class="btn btn-primary btn-lg"id="iniciar">Iniciar sesión</button></center>
@@ -40,8 +54,10 @@
  <br>
 
 <center><text>¿No tienes una cuenta? </text>
-<a href="/registro">Registrate</a></center>
+<a href="/registro">Regístrate</a></center>
 </form>
-
+    </h2>
+    <br>
+  
     </body>
 </html>
