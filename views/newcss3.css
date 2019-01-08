@@ -2,11 +2,55 @@
     margin-top:20px;
 
 }
+
+.fondo{
+	background-color:#4CA5BF;
+
+	height: 140px;
+}
+
+.border{
+	border: 5px;
+}
+
+.caja_padre{
+	margin-left: 3%;
+	width:400px;
+	height: 50px;
+	background-color: #FFFFFF;
+	position: relative;
+}
+
+.caja_listado{
+	width:430px;
+	height: 415px;
+	background-color: #DFDFDF;
+	position: relative;
+	margin-left: 1%;
+}
+
+#boton_orden{
+
+    height: 50px;
+    width: 280px;
+    margin-left: 35%;
+    padding: 5px;
+}
+
+#boton_cerrar{
+
+    height: 50px;
+    width: 280px;
+    padding: 5px;
+}
 #mapa{
-    
-     margin-left: 10px;
+  width:430px;
+height: 415px;
+background-color: #DFDFDF;
+position: relative;
+margin-left: 1%;
+
 }
 #orden{
       margin-right: 10px;
 }
-   
