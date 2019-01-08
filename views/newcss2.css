@@ -1,20 +1,37 @@
 #body{
 }
 
-#contendor{
-    width: 500px;
-    margin-top:10px;
+.fondo{
+	background-color: #4AC526;
+}
+
+#contendor2{
+    width: 450px;
+    height: 160px;
+    padding: 15px;
+
+    position: static;
+}
+
+.texto{
+	line-height: 0.5em;
+	    position: relative;
 
 }
+
+
+#contendor{
+    width: 450px;
+    height: 270px;
+    padding: 15px;
+}
+
 #titulo2{
     margin-top:5px;
 
 }
 #registrar{
-    
+
      margin-left: 10px;
 }
-#regresar{
-      margin-right: 10px;
-}
-          
+   
