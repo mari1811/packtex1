@@ -48,7 +48,7 @@ app.get('/orden', (req, res) =>{
   res.render('orden')
 });
 
-  app.get('/inicio1', (req, res) =>{
+  app.get('/principal', (req, res) =>{
     const cliente = new Client();
     cliente.connect()
       .then(() => {
@@ -71,7 +71,7 @@ app.get('/orden', (req, res) =>{
                           .then((resultado2) => {
                           console.log(resultado2);
 
-        res.render('mapa',{
+        res.render('principal',{
           direccion: resultado.rows[0],
           llegada:resultado2.rows[0]
 });
