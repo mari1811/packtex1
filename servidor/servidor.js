@@ -71,7 +71,7 @@ app.get('/orden', (req, res) =>{
                           .then((resultado2) => {
                           console.log(resultado2);
 
-        res.render('inicio1',{
+        res.render('/principal',{
           direccion: resultado.rows[0],
           llegada:resultado2.rows[0]
 });
