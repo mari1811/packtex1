@@ -48,7 +48,7 @@ app.get('/orden', (req, res) =>{
   res.render('orden')
 });
 
-  app.get('/mapa', (req, res) =>{
+  app.get('/inicio1', (req, res) =>{
     const cliente = new Client();
     cliente.connect()
       .then(() => {
