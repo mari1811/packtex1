@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" type="image/png" href="Icono.ico" />
+        <link rel="icon" type="image/png" href="Imagenes/Icono.ico" />
         <title>PackTex</title>
         <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="newcss3.css" rel="stylesheet" type="text/css"/>
@@ -21,7 +21,7 @@
 
     <div class="fondo">
       <br>
-      <a style="margin-left: 3%"><img src="Icono.ico" alt="" title="" width="100" height="100" /></a>
+      <a style="margin-left: 3%"><img src="Imagenes/Icono.ico" alt="" title="" width="100" height="100" /></a>
       <a style="margin-left: 25%" ><font face="Impact" size="7" color="white">¡Envía un paquete desde tu PC!</font></a>
     </div>
 
@@ -40,50 +40,57 @@
     </div>
 
     <div class="container" id="mapa">
-      <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
-      <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
-   {{#direccion}}
-   {{#llegada}}
-      <script type="text/javascript">
-        window.onload = function() {
-          L.mapquest.key = 'PpyBjKLGorrBKzyNPRj0OadzL5oWqssN';
-          // Geocode three locations, then call the createMap callback
-          L.mapquest.geocoding().geocode(['{{direccionSalida}}','{{direccionEntrega}}'], createMap);
+      <head>
+        <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+    {{#direccion}}
+    {{#llegada}}
+        <script type="text/javascript">
+          window.onload = function() {
+            L.mapquest.key = 'PpyBjKLGorrBKzyNPRj0OadzL5oWqssN';
+            // Geocode three locations, then call the createMap callback
+            L.mapquest.geocoding().geocode(['{{direccionSalida}}','{{direccionEntrega}}'], createMap);
 
-          function createMap(error, response) {
-            // Initialize the Map
-            var map = L.mapquest.map('map', {
-              layers: L.mapquest.tileLayer('map'),
-              center: [0, 0],
-              zoom: 12
-            });
+            function createMap(error, response) {
+              // Initialize the Map
+              var map = L.mapquest.map('map', {
+                layers: L.mapquest.tileLayer('map'),
+                center: [0, 0],
+                zoom: 12
+              });
 
-            // Generate the feature group containing markers from the geocoded locations
-            var featureGroup = generateMarkersFeatureGroup(response);
+              // Generate the feature group containing markers from the geocoded locations
+              var featureGroup = generateMarkersFeatureGroup(response);
 
-            // Add markers to the map and zoom to the features
-            featureGroup.addTo(map);
-            map.fitBounds(featureGroup.getBounds());
-          }
-
-          function generateMarkersFeatureGroup(response) {
-            var group = [];
-            for (var i = 0; i < response.results.length; i++) {
-              var location = response.results[i].locations[0];
-              var locationLatLng = location.latLng;
-
-              // Create a marker for each location
-              var marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
-                .bindPopup(location.adminArea5 + ', ' + location.adminArea3);
-
-              group.push(marker);
+              // Add markers to the map and zoom to the features
+              featureGroup.addTo(map);
+              map.fitBounds(featureGroup.getBounds());
             }
-            return L.featureGroup(group);
+
+            function generateMarkersFeatureGroup(response) {
+              var group = [];
+              for (var i = 0; i < response.results.length; i++) {
+                var location = response.results[i].locations[0];
+                var locationLatLng = location.latLng;
+
+                // Create a marker for each location
+                var marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
+                  .bindPopup(location.adminArea5 + ', ' + location.adminArea3);
+
+                group.push(marker);
+              }
+              return L.featureGroup(group);
+            }
           }
-        }
-      </script>
-      {{/llegada}}
-      {{/direccion}}
+        </script>
+        {{/llegada}}
+        {{/direccion}}
+
+      </head>
+
+      <body style="border: 0; margin: 0;">
+        <div id="map" style="width: 100%; height: 530px;"></div>
+      </body>
     </div>
 
 </body>
