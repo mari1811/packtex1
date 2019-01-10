@@ -75,13 +75,15 @@
      <div>
       {{#direccion}}
       {{#llegada}}
-    <ul class="list-group list-group-flush">
-    <li class="list-group-item">Salida: {{direccionSalida}} / Destino: {{direccionEntrega}}</li>
-    <li class="list-group-item"></li>
-    <li class="list-group-item"></li>
-    <li class="list-group-item"></li>
-    <li class="list-group-item"></li>
-  </ul>
+<div class="list-group">
+  <a href="/orden" class="list-group-item list-group-item-action">
+    Salida: {{direccionSalida}}  / Destino:{{direccionEntrega}}
+  </a>
+  <a href="/orden" class="list-group-item list-group-item-action"></a>
+  <a href="/orden" class="list-group-item list-group-item-action"></a>
+  <a href="/orden" class="list-group-item list-group-item-action"></a>
+  <a href="/orden" class="list-group-item list-group-item-action"></a>
+</div>
            {{/llegada}}
           {{/direccion}}
           </div>
