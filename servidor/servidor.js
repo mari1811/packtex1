@@ -89,7 +89,7 @@ app.get('/orden', (req, res) =>{
     cliente.connect()
       .then(() => {
 
-        const sqlOrden = 'DELETE FROM orden WHERE idOrdenRecoleccion = $1'
+        const sqlOrden = 'DELETE * FROM orden WHERE idOrdenRecoleccion = $1;'
         const parametrosOrden = [req.body.id_orden]
         var resultado = {
           orden:cliente.query(sqlOrden, parametrosOrden)
