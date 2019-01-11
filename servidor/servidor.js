@@ -80,6 +80,37 @@ app.get('/orden', (req, res) =>{
 });
 });
 
+
+
+
+
+  app.post('/eliminar', (req, res) =>{  
+    const cliente = new Client();
+    cliente.connect()
+      .then(() => {
+
+        const sqlOrden = 'DELETE FROM orden WHERE id_orden = $1'
+        const parametrosOrden = [req.body.id_orden]
+        var resultado = {
+          orden:cliente.query(sqlOrden, parametrosOrden)
+        }
+        return resultado
+      })
+      .then((resultado) => {
+        console.log('Resultado orden: ', resultado.orden);
+    
+        res.redirect('/mapa')
+      }).catch((err) => {
+
+        res.send('Ocurrio un error eliminando la orden');
+      });
+  });
+
+
+     
+     
+
+     
 app.get('/inicio', (req, res) =>{
 res.render('inicio')
     res.redirect('/login');
