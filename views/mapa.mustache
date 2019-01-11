@@ -98,9 +98,10 @@
   </a>
 </div>
    <form action="/eliminar" method="post" >
+   <input type="hidden" name="id_orden" value="{{idOrdenRecoleccion}}">
   <!-- <a  class="list-group-item list-group-item-action" data-toggle="modal" data-target="#miModal"> -->
    # Orden:{{idOrdenRecoleccion}}  /  Salida: {{direccionSalida}}  /  Destino:{{direccionEntrega}}
-   <center><button type="submit" class="btn btn-danger" id="id_orden" >Eliminar</button></center>
+   <center><button type="submit" class="btn btn-danger" name="id_orden" >Eliminar</button></center>
     </a>
     </form>
 
