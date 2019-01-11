@@ -1,4 +1,3 @@
-
 <html>
   <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -9,20 +8,18 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
-           <link href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet'>
-           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-           integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-           crossorigin="anonymous">
-           </script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
-{{#direccion}}
+
 {{#llegada}}
     <script type="text/javascript">
       window.onload = function() {
         L.mapquest.key = 'PpyBjKLGorrBKzyNPRj0OadzL5oWqssN';
         // Geocode three locations, then call the createMap callback
-        L.mapquest.geocoding().geocode(['{{direccionSalida}}','{{direccionEntrega}}'], createMap);
+        L.mapquest.geocoding().geocode(['{{direccionEntrega}}'], createMap);
         function createMap(error, response) {
           // Initialize the Map
           var map = L.mapquest.map('map', {
@@ -51,7 +48,6 @@
       }
     </script>
     {{/llegada}}
-    {{/direccion}}
 
   </head>
 
@@ -66,24 +62,44 @@
 
         <a class="caja_padre"><font face="Arial" size="4" color="black"><strong>↓↓ Listado de tus órdenes</strong></a>
 
-        <a href="/orden" ><button type="submit" class="btn btn-success"  id="boton_orden">Crear una orden</button></a>
+        <a href="/orden" ><button type="submit" class="btn btn-success" style='width:190px; height:40px' id="boton_orden">Crear una orden</button></a>
 
-        <a href="/login" ><button type="submit" class="btn btn-danger"  id="boton_cerrar">Cerrar Sesión</button></a>
+        <a href="/login" ><button type="submit" class="btn btn-danger" style='width:190px; height:40px'  id="boton_cerrar">Cerrar Sesión</button></a>
+        
 
     </div>
 
      <div>
       {{#direccion}}
       {{#llegada}}
-<div class="list-group">
-  <a href="/orden" class="list-group-item list-group-item-action">
-    Salida: {{direccionSalida}}  / Destino:{{direccionEntrega}}
-  </a>
-  <a href="/orden" class="list-group-item list-group-item-action"></a>
-  <a href="/orden" class="list-group-item list-group-item-action"></a>
-  <a href="/orden" class="list-group-item list-group-item-action"></a>
-  <a href="/orden" class="list-group-item list-group-item-action"></a>
+<div class="list">
+<div class="modal" tabindex="-1" role="dialog" id=miModal>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Eliminar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <center> <p>¿Desea eliminar esta orden?</p></center>
+      </div>
+      <div class="modal-footer">
+      
+       <form action="/eliminar" method="post">
+        <center><button type="button" class="btn btn-danger">Eliminar</button></center>
+        </form>
+        
+      </div>
+    </div>
+  </div>
 </div>
+  </a>
+</div>
+  <a  class="list-group-item list-group-item-action" data-toggle="modal" data-target="#miModal">
+    Salida: {{direccionSalida}}  / Destino:{{direccionEntrega}}
+    </a>
            {{/llegada}}
           {{/direccion}}
           </div>
